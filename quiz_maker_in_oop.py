@@ -17,6 +17,21 @@ class QuizMaker:
             file.write("---\n")
 
 # display the welcome message and run the loop to collect user input
+    def start(self):
+        print("Quiz Creator!")
+
 # loop: ask for question, options (a-d), and the correct answer
+        while True:
+            question = input("\nEnter your quiz question: ")
+            options = {}
+            for letter in ['a', 'b', 'c', 'd']:
+                options[letter] = input(f"Enter option {letter}: ")
+
+            while True:
+                answer = input("Enter the correct answer (a/b/c/d): ").lower()
+                if answer in ['a', 'b', 'c', 'd']:
+                    break
+                else:
+                    print("Please enter a, b, c, or d.")
 # save the question to file and ask if the user wants to continue or stop
 # Making the quiz program ready to use.
