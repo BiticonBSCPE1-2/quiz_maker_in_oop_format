@@ -28,5 +28,32 @@ class QuizRunner:
         print("Welcome to the Quiz Game!")
 
 # go through each question and ask the user and its answer
+        for question in self.questions:
+            print("\n" + question[0])
+            print(question[1])
+            print(question[2])
+            print(question[3])
+            print(question[4])
+
+            answer = input("Your answer (a/b/c/d): ").strip().lower()
+            correct_answer = question[5].split(": ")[1].strip().lower()
+
+            # check if the answer is correct and update the score
+            if answer == correct_answer:
+                print("Correct!\n")
+                self.score += 1
+            else:
+                print("Wrong! The correct answer is", correct_answer + ".\n")
+
+            # ask the user if they want to continue
+            continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
+            if continue_quiz != "yes":
+                print("Thanks for playing!")
+                break
+
 # show the final score after the quiz ends
+        print(f"\nFinal score: {self.score} out of {len(self.questions)}")
+
 # Making the quiz program ready to use.
+quiz = QuizRunner("quiz_bank.txt")
+quiz.start_quiz()
