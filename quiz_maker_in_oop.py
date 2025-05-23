@@ -33,5 +33,16 @@ class QuizMaker:
                     break
                 else:
                     print("Please enter a, b, c, or d.")
+
 # save the question to file and ask if the user wants to continue or stop
+            self.save_question(question, options, answer)
+            print("Question added to quiz_bank.txt")
+
+            stop = input("\nEnter '1' to stop adding questions or press any key to continue: ")
+            if stop == '1':
+                print("\nAll questions saved to quiz_bank.txt.")
+                break
+
 # Making the quiz program ready to use.
+quiz = QuizCreator("quiz_bank.txt")
+quiz.start()
