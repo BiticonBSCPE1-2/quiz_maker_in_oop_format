@@ -44,5 +44,5 @@ class QuizMaker:
                 break
 
 # Making the quiz program ready to use.
-quiz = QuizCreator("quiz_bank.txt")
+quiz = QuizMaker("quiz_bank.txt")
 quiz.start()
